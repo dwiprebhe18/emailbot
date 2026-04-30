@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Templates</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Email Templates</h2>
+    <p>6 ready-made templates</p>
+
+    <div class="titem" onclick="showTemplate('leave')">
+      <div class="ticon" style="background:#E6F1FB">🏖</div>
+      <div class="tinfo">
+        <div class="tname">Leave request</div>
+        <span class="tbadge" style="background:#E6F1FB; color:#0C447C">Formal</span>
+      </div>
+    </div>
+
+    <div class="titem" onclick="showTemplate('job')">
+      <div class="ticon" style="background:#E6F1FB">💼</div>
+      <div class="tinfo">
+        <div class="tname">Job application</div>
+        <span class="tbadge" style="background:#E6F1FB; color:#0C447C">Formal</span>
+      </div>
+    </div>
+
+    <div class="titem" onclick="showTemplate('complaint')">
+      <div class="ticon" style="background:#FAECE7">📣</div>
+      <div class="tinfo">
+        <div class="tname">Complaint mail</div>
+        <span class="tbadge" style="background:#FAECE7; color:#712B13">Assertive</span>
+      </div>
+    </div>
+
+    <div class="titem" onclick="showTemplate('resign')">
+      <div class="ticon" style="background:#E6F1FB">🚪</div>
+      <div class="tinfo">
+        <div class="tname">Resignation letter</div>
+        <span class="tbadge" style="background:#E6F1FB; color:#0C447C">Formal</span>
+      </div>
+    </div>
+
+    <div class="titem" onclick="showTemplate('apology')">
+      <div class="ticon" style="background:#EAF3DE">🙏</div>
+      <div class="tinfo">
+        <div class="tname">Apology mail</div>
+        <span class="tbadge" style="background:#EAF3DE; color:#27500A">Friendly</span>
+      </div>
+    </div>
+
+    <div class="titem" onclick="showTemplate('meeting')">
+      <div class="ticon" style="background:#E6F1FB">📅</div>
+      <div class="tinfo">
+        <div class="tname">Meeting request</div>
+        <span class="tbadge" style="background:#E6F1FB; color:#0C447C">Formal</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="main">
+
+    <div class="topbar">
+      <span class="main-title">Compose Email</span>
+      <button class="dark-btn" onclick="toggleDark()">🌙 Dark Mode</button>
+    </div>
+
+    <input type="text" id="to" placeholder="To: email@example.com" />
+    <input type="text" id="subject" placeholder="Subject..." />
+
+    <div class="edit-bar">
+      <span>Email Body</span>
+      <button class="edit-btn" onclick="toggleEdit()">✏️ Edit</button>
+    </div>
+
+    <textarea id="body" rows="10" readonly></textarea>
+
+    <div class="btn-row">
+      <button onclick="sendMail()">📧 Send Mail</button>
+      <button onclick="copyText()">📋 Copy</button>
+      <button onclick="clearAll()" class="btn-clear">🗑 Clear</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
