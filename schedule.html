@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Schedule Email</title>
+  <link rel="stylesheet" href="schedule.css">
+</head>
+<body>
+
+<h1>Schedule Email</h1>
+
+<form id="form">
+  <input type="email" id="email" placeholder="Recipient Email"><br><br>
+  <input type="text" id="subject" placeholder="Subject"><br><br>
+
+  <select id="template">
+    <option value="">Select Template</option>
+    <option>Welcome Email</option>
+    <option>Reminder Email</option>
+  </select><br><br>
+
+  <input type="date" id="date"><br><br>
+  <input type="time" id="time"><br><br>
+
+  <button type="submit">Schedule</button>
+</form>
+
+<h2>Scheduled Emails</h2>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Subject</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody"></tbody>
+</table>
+
+<script src="schedule.js">
+let data = [];
+
+document.getElementById("form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let email = document.getElementById("email").value;
+  let subject = document.getElementById("subject").value;
+  let date = document.getElementById("date").value;
+  let time = document.getElementById("time").value;
+
+  data.push({email, subject, date, time});
+  display();
+  this.reset();
+});
+
+function display(){
+  let body = document.getElementById("tableBody");
+  body.innerHTML = "";
+
+  data.forEach((item, i)=>{
+    body.innerHTML += `
+      <tr>
+        <td>${item.email}</td>
+        <td>${item.subject}</td>
+        <td>${item.date}</td>
+        <td>${item.time}</td>
+        <td><button onclick="del(${i})">Delete</button></td>
+      </tr>`;
+  });
+}
+
+function del(i){
+  data.splice(i,1);
+  display();
+}
+</script>
+
+</body>
+</html>
