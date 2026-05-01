@@ -1,8 +1,12 @@
 // filepath: src/components/Navbar.jsx
+import { useNavigate } from 'react-router-dom';
+
 function Navbar() {
+  const navigate = useNavigate();
+  
   return (
     <nav style={styles.navbar}>
-      <div style={styles.logoContainer}>
+      <div style={styles.logoContainer} onClick={() => navigate('/')}>
         <div style={styles.logoIcon}>📧</div>
         <span style={styles.logoText}>EmailBot</span>
       </div>
@@ -10,7 +14,7 @@ function Navbar() {
         <a href="#features" style={styles.link}>Features</a>
         <a href="#about" style={styles.link}>About</a>
         <a href="#contact" style={styles.link}>Contact</a>
-        <button style={styles.ctaButton}>Get Started</button>
+        <button style={styles.ctaButton} onClick={() => navigate('/login')}>Get Started</button>
       </div>
     </nav>
   );
