@@ -56,11 +56,15 @@ function Features() {
 const styles = {
   features: {
     padding: '5rem 2rem',
+    minHeight: '100vh',
     backgroundColor: '#0f172a',
+    display: 'flex',
+    alignItems: 'center',
   },
   container: {
     maxWidth: '1100px',
     margin: '0 auto',
+    width: '100%',
   },
   header: {
     textAlign: 'center',
@@ -90,15 +94,16 @@ const styles = {
   grid: {
     display: 'flex',
     justifyContent: 'center',
+    alignItems: 'center',
     gap: '2rem',
     flexWrap: 'wrap',
+    minHeight: '60vh',
   },
   card: {
     padding: '2rem',
-    backgroundColor: '#ffffff',
-    border: '1px solid #e2e8f0',
+    border: '1px solid rgba(255, 255, 255, 0.1)',
     borderRadius: '12px',
-    width: '300px',
+    width: '280px',
     transition: 'all 0.3s',
     backgroundColor: 'rgba(30, 41, 59, 0.5)',
   },
