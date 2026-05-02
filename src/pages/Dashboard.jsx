@@ -6,6 +6,30 @@ function Dashboard() {
 
   return (
     <div className="container">
+      {/* Back Button */}
+      <button 
+        onClick={() => navigate(-1)} 
+        style={{
+          position: 'fixed',
+          top: '20px',
+          left: '20px',
+          zIndex: 1000,
+          padding: '8px 12px',
+          backgroundColor: '#007bff',
+          color: 'white',
+          border: 'none',
+          borderRadius: '4px',
+          cursor: 'pointer',
+          fontSize: '18px',
+          fontWeight: 'bold',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+      >
+        ←
+      </button>
+      
       {/* Sidebar */}
       <div className="sidebar">
         <h2>EmailBot</h2>

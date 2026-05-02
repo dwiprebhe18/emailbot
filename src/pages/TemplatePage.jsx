@@ -288,14 +288,19 @@ Best regards,
     },
     logoutBtn: {
       position: 'fixed',
-      top: '1rem',
-      right: '1rem',
-      padding: '0.5rem 1rem',
-      background: '#ef4444',
+      top: '1.25rem',
+      left: '1.25rem',
+      padding: '0.5rem 0.75rem',
+      background: '#007bff',
       border: 'none',
       borderRadius: '0.5rem',
       color: '#ffffff',
       cursor: 'pointer',
+      fontSize: '1.125rem',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 1000
     }
   };
 
@@ -310,8 +315,8 @@ Best regards,
 
   return (
     <div style={styles.container}>
-      <button style={styles.logoutBtn} onClick={() => navigate('/')}>
-        ← Logout
+      <button style={styles.logoutBtn} onClick={() => navigate(-1)}>
+        ←
       </button>
       
       <div style={styles.sidebar}>
