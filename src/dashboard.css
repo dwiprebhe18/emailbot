@@ -5,10 +5,17 @@
   font-family: "Segoe UI", sans-serif;
 }
 
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
 /* Layout */
 .container {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background: #f5f7fb;
 }
@@ -63,6 +70,7 @@
 .topbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 18px 30px;
   background: white;
   border-bottom: 1px solid #e5e7eb;
@@ -101,18 +109,18 @@
 
 /* Cards */
 .cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
   margin-bottom: 30px;
 }
 
 .card {
-  flex: 1;
   background: white;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s;
 }
 
 .card:hover {
@@ -133,13 +141,15 @@
   background: white;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  max-width: 900px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  width: min(100%, 900px);
+  margin: 0 auto;
 }
 
 .form-box h2 {
   margin-bottom: 20px;
   color: #111827;
+  text-align: center;
 }
 
 /* Inputs */
@@ -157,13 +167,14 @@
 
 .form-box textarea {
   min-height: 120px;
+  resize: vertical;
 }
 
 .form-box input:focus,
 .form-box textarea:focus {
   border-color: #2563eb;
   outline: none;
-  box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
 }
 
 /* Button */
@@ -176,19 +187,15 @@
   border-radius: 8px;
   font-size: 15px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s;
 }
 
-.form-box {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  width: 100%;
+.form-box button:hover {
+  background: #1d4ed8;
 }
 
-
-html, body, #root {
-  height: 100%;
-  width: 100%;
+@media (max-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }

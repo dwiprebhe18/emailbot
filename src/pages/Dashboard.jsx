@@ -1,9 +1,8 @@
-import "../dashboard.css";
+import "./dashboard.css";
 
 function Dashboard() {
   return (
     <div className="container">
-
       {/* Sidebar */}
       <div className="sidebar">
         <h2>EmailBot</h2>
@@ -21,7 +20,6 @@ function Dashboard() {
 
       {/* Main */}
       <div className="main">
-
         {/* Topbar */}
         <div className="topbar">
           <h3>Email Bot Dashboard</h3>
@@ -37,7 +35,6 @@ function Dashboard() {
 
         {/* Content */}
         <div className="content">
-
           <h1>Dashboard</h1>
           <p className="sub">Welcome back! Here's what's happening.</p>
 
@@ -69,9 +66,7 @@ function Dashboard() {
 
             <button>Send Email</button>
           </div>
-
         </div>
-
       </div>
     </div>
   );
